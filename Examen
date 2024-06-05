@@ -1,1 +1,30 @@
-Examen 
+Isaac Shakalo
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Construcción de query en SQL
+
+SELECT 
+    FDOC.DNUM AS "# de ticket",                    /* Del campo DNUM de la tabla FDOC dame el # de ticket */
+    FDOC.DFECHA AS "Fecha",                        /* Del campo DFECHA de la tabla FDOC dame la Fecha */
+    FDOC.DCANT AS "Monto sin IVA",                 /* Del campo DCANT de la tabla FDOC dame el monto */
+    (FDOC.DCANT + FDOC.DIVA) AS "Monto con IVA",   /* Aqui vamos a sumar dos campos el de IVA y el monto para tener el monto con IVA */
+    FDOC.DPAR1 AS "Vendedor",                      /* Del campo DPAR1 de la tabla FDOC dame el Vendedor */
+    FCLI.CLINOM AS "Cliente",                      /* Del campo CLINOM de la tabla FCLI dame el Cliente */
+    FAXINV.ICOD AS "Productos comprados (SKU)",    /* Del campo ICOD de la tabla FAXINV dame los Productos comprados */
+    FINV.IDESCR AS "Descripción",                  /* Del campo IDESCR de la tabla FINV dame la Descripcion */
+    FAXINV.AICANTF AS "Cantidad (unidades)",       /* Del campo AICANTF de la tabla FAXINV dame la cantidad de Unidades */
+    FAXINV.AIALMACEN AS "Almacén que vendió",      /* Del campo AIALMACEN de la tabla FAXINV dame el almacen vendido */
+    FINV.ILIS33 AS "Precio de lista",              /* Del campo ILIS33 de la tabla FINV dame el precio de lista */
+    FINV.IFAM3 AS "Talla",                         /* Del campo IFAM3 de la tabla FINV dame la Talla */
+    FINV.IFAM4 AS "Color",                         /* Del campo IFAM4 de la tabla FINV dame la Color */
+    FINV.IFAM5 AS "Temporada"                      /* Del campo IFAM5 de la tabla FINV dame la Temporada */
+FROM 
+    FDOC                                           /* Seleccionas la tabla que vas a tomar 
+JOIN 
+    FCLI ON FDOC.CLICOD = FCLI.CLICOD               /* Relacion de la tabla de documentos con clientes usando el código de cliente */
+JOIN 
+    FAXINV ON FDOC.DNUM = FAXINV.DNUM               /* Relacion de la tabla de documentos con el auxiliar de inventarios usando el número de documento */
+JOIN 
+    FINV ON FAXINV.ICOD = FINV.ICOD                 /* Relacion del auxiliar de inventarios con inventarios usando el código de producto */
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
