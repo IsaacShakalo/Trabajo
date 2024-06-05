@@ -20,11 +20,56 @@ SELECT
 FROM 
     FDOC                                           /* Seleccionas la tabla que vas a tomar 
 JOIN 
-    FCLI ON FDOC.CLICOD = FCLI.CLICOD               /* Relacion de la tabla de documentos con clientes usando el código de cliente */
+    FCLI ON FDOC.CLICOD = FCLI.CLICOD               /* Relacion con JOIN, de la tabla de documentos con clientes usando el código de cliente */
 JOIN 
-    FAXINV ON FDOC.DNUM = FAXINV.DNUM               /* Relacion de la tabla de documentos con el auxiliar de inventarios usando el número de documento */
+    FAXINV ON FDOC.DNUM = FAXINV.DNUM               /* Relacion con JOIN, de la tabla de documentos con el auxiliar de inventarios usando el número de documento */
 JOIN 
-    FINV ON FAXINV.ICOD = FINV.ICOD                 /* Relacion del auxiliar de inventarios con inventarios usando el código de producto */
+    FINV ON FAXINV.ICOD = FINV.ICOD                 /* Relacion con JOIN, del auxiliar de inventarios con inventarios usando el código de producto */
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ejercicios – Python
+
+Ejercicio 1: 
+
+# Crear el diccionario con los datos climáticos
+datos_climaticos = {
+    'Ciudad1': [20, 21, 19, 22, 20, 21, 23],
+    'Ciudad2': [15, 17, 16, 14, 15, 16, 18],
+    'Ciudad3': [30, 29, 31, 32, 30, 29, 28],
+    'Ciudad4': [25, 26, 24, 27, 26, 25, 24],
+    'Ciudad5': [10, 12, 11, 13, 12, 11, 10]}
+
+# Calcular las estadísticas para cada ciudad
+promedios = {}
+maximas = {}
+minimas = {}
+
+for ciudad, temperaturas en datos_climaticos.items():
+    promedio = sum(temperaturas) / len(temperaturas)
+    maxima = max(temperaturas)
+    minima = min(temperaturas)
+    
+    promedios[ciudad] = promedio
+    maximas[ciudad] = maxima
+    minimas[ciudad] = minima
+
+# Determinar las ciudades con la temperatura promedio más alta y más baja
+ciudad_mas_calida = max(promedios, key=promedios.get)
+ciudad_mas_fria = min(promedios, key=promedios.get)
+
+# Imprimir los resultados
+print("Temperaturas promedio por ciudad:", promedios)
+print("Temperaturas máximas por ciudad:", maximas)
+print("Temperaturas mínimas por ciudad:", minimas)
+print(f"La ciudad con la temperatura promedio más alta es {ciudad_mas_calida} con {promedios[ciudad_mas_calida]:.2f}°C.")
+print(f"La ciudad con la temperatura promedio más baja es {ciudad_mas_fria} con {promedios[ciudad_mas_fria]:.2f}°C.")
+
+Ejercicio 2: 
+
+
+
+
+
+
 
