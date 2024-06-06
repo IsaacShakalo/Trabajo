@@ -67,6 +67,46 @@ print(f"La ciudad con la temperatura promedio más baja es {ciudad_mas_fria} con
 
 Ejercicio 2: 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Examen técnico 
+
+Pregunta 1, Solucion:
+
+Una opcion sería utilizar tipo de integración de datos como
+Azure, para extraer datos del ERP a través 
+de su API o de reportes, cambiarlos
+y cargarlos en la nube. Despues conectar 
+alguna herramienta de BI para hacer reportes y analisi de datos.
+
+Pregunta 2, Solucion: 
+
+Yo recomendaria la opcion de adquirir un servidor en la nube 
+ya que tiene la posibilidad de de ser mas escalable y flexible con los datos.
+Aunque la inversión inicial puede ser mayor que la adquisición de un servidor físico,
+la nube tiene mas beneficios como no pagar por mantenimiento o 
+la capacidad de ajustar recursos según la demanda.
+
+Pregunta 3, Solucion: 
+
+Para no afectar el servidor  al conectar BI, recomiendo 
+implementar una extracción de datos incremental, pasando 
+solo los cambios mas reecientes para que asi no se hagan cambios en todo.
+Esto puede ser un poco mas costoso pero asi no afectaria mucho el desempeño.
+
+Pregunta 4, Solucion: 
+
+Empezaria por seccionar y dividir la cantidad de informacion y pasarla en cantidades
+proporcionadas,esto ayudaria a que analize la informacion mas a detalle y que no hayan
+problemas al desplegar la informacion en BI.
+
+
+
+
+
+
+
+
+
 
 
 
