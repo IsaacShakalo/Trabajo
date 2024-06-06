@@ -3,7 +3,7 @@ Isaac Shakalo
 Construcción de query en SQL
 
 SELECT 
-    FDOC.DNUM AS "# de ticket",                    /* Del campo DNUM de la tabla FDOC dame el # de ticket */
+    FDOC.DNUM AS "# de ticket",                    /* Del campo DNUM de la tabla FDOC dame el num de ticket */
     FDOC.DFECHA AS "Fecha",                        /* Del campo DFECHA de la tabla FDOC dame la Fecha */
     FDOC.DCANT AS "Monto sin IVA",                 /* Del campo DCANT de la tabla FDOC dame el monto */
     (FDOC.DCANT + FDOC.DIVA) AS "Monto con IVA",   /* Aqui vamos a sumar dos campos el de IVA y el monto para tener el monto con IVA */
@@ -32,40 +32,59 @@ Ejercicios – Python
 
 Ejercicio 1: 
 
-# Crear el diccionario con los datos climáticos
 datos_climaticos = {
     'Ciudad1': [20, 21, 19, 22, 20, 21, 23],
     'Ciudad2': [15, 17, 16, 14, 15, 16, 18],
     'Ciudad3': [30, 29, 31, 32, 30, 29, 28],
     'Ciudad4': [25, 26, 24, 27, 26, 25, 24],
-    'Ciudad5': [10, 12, 11, 13, 12, 11, 10]}
+    'Ciudad5': [10, 12, 11, 13, 12, 11, 10]
+}
 
-# Calcular las estadísticas para cada ciudad
 promedios = {}
-maximas = {}
-minimas = {}
 
-for ciudad, temperaturas en datos_climaticos.items():
+for ciudad, temperaturas in datos_climaticos.items():
     promedio = sum(temperaturas) / len(temperaturas)
-    maxima = max(temperaturas)
-    minima = min(temperaturas)
-    
     promedios[ciudad] = promedio
-    maximas[ciudad] = maxima
-    minimas[ciudad] = minima
 
-# Determinar las ciudades con la temperatura promedio más alta y más baja
 ciudad_mas_calida = max(promedios, key=promedios.get)
 ciudad_mas_fria = min(promedios, key=promedios.get)
 
-# Imprimir los resultados
-print("Temperaturas promedio por ciudad:", promedios)
-print("Temperaturas máximas por ciudad:", maximas)
-print("Temperaturas mínimas por ciudad:", minimas)
-print(f"La ciudad con la temperatura promedio más alta es {ciudad_mas_calida} con {promedios[ciudad_mas_calida]:.2f}°C.")
-print(f"La ciudad con la temperatura promedio más baja es {ciudad_mas_fria} con {promedios[ciudad_mas_fria]:.2f}°C.")
+print("Temperaturas promedio por ciudad:")
+for ciudad, promedio in promedios.items():
+    print(f"{ciudad}: {promedio:.2f}°C")
+
+print(f"La ciudad con la temperatura promedio más alta es {ciudad_mas_calida}.")
+print(f"La ciudad con la temperatura promedio más baja es {ciudad_mas_fria}.")
+
+Ejemplo de resultado:
+
+Temperaturas promedio por ciudad:
+Ciudad1: 21.43°C
+Ciudad2: 16.00°C
+Ciudad3: 29.71°C
+Ciudad4: 25.00°C
+Ciudad5: 11.43°C
+La ciudad con la temperatura promedio más alta es Ciudad3.
+La ciudad con la temperatura promedio más baja es Ciudad5.
+
 
 Ejercicio 2: 
+
+def suma_valores(cadena):
+    suma = 0
+    for letra in cadena:
+        if 'a' <= letra <= 'z':
+            suma += ord(letra) - ord('a') + 1
+        else:
+            return "Por favor, ingrese solo letras minúsculas."
+    return suma
+
+cadena = input("Ingrese una cadena de letras minúsculas: ").lower()
+print("La suma de los valores de las letras en la cadena es:", suma_valores(cadena))
+
+Ejemplo de resultado:
+Ingrese una cadena de letras minúsculas: hola
+La suma de los valores de las letras en la cadena es: 36
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Examen técnico 
@@ -98,6 +117,37 @@ Pregunta 4, Solucion:
 Empezaria por seccionar y dividir la cantidad de informacion y pasarla en cantidades
 proporcionadas,esto ayudaria a que analize la informacion mas a detalle y que no hayan
 problemas al desplegar la informacion en BI.
+
+Pregunta 5, Solucion: 
+
+Primero me tendria que decir que no le hace sentido dentro de los datos,
+le hago saber que lo vamos a revisar y vamos a analizar de donde viene el problema, 
+verificar los cambios mas recientes, Realizar consultas manuales para saber cual es el
+problema que esta afectando toda la tabla.
+
+Pregunta 6, Solucion: 
+
+Primero implementar un control de acceso, mantener los sistemas actualizados, 
+realizar copias de seguridad, usar firewalls y segmentación de
+red.
+
+Pregunta 7, Solucion: 
+
+Primero seria hacer un BI que se actualize cada 15 minutos juntando la informacion
+de las diferentes fuentes de informacion. Tendriamos que extraer la infromacion de alguna forma
+y hacer una base de datos. Con los tiempos serian:
+
+Planificación: 1 semana aprox, 
+Implementación: 4 semanas aprox, 
+Desarrollo del Tablero: 2 semanas aprox, 
+Pruebas y Optimización: 2 semanas aprox.
+
+Los costos dependerian de la calidad y e implementacion necesaria de este proyecto, un ejemplo:
+
+Licencias: $40,000 - $100,000 MXN.
+Infraestructura de la Nube: $10,000 - $30,000 MXN. Mensual
+Desarrollo: $400,000 - $600,000 MXN. 
+Mantenimiento y Soporte: $20,000 - $40,000 MXN. Mensual
 
 
 
