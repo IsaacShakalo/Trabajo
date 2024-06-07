@@ -1,4 +1,4 @@
-Isaac Shakalo
+Isaac Shakalo Examen
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Construcción de query en SQL
 
@@ -27,10 +27,23 @@ JOIN
     FINV ON FAXINV.ICOD = FINV.ICOD                 /* Relacion con JOIN, del auxiliar de inventarios con inventarios usando el código de producto */
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Desarrollo de visualizaciones en Business Intelligence
+
+Honestamente, no tengo experiencia previa en el uso de BI, pero me meti a investigar en Power BI 
+y me llamó mucho la atención ver los datos desplegados y analizados. Sin duda, me gustaría 
+aprender más sobre este tema. La forma en que Power BI permite visualizar y manipular datos 
+es muy interesante y estoy emocionado por la oportunidad de mejorar mis habilidades en esta área. 
+Estoy dispuesto a dedicar tiempo y esfuerzo para dominar esta herramienta y poder contribuir de
+manera efectiva en el análisis y visualización de datos en mi futuro rol.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Ejercicios – Python
 
 Ejercicio 1: 
+
+
+
+
 
 datos_climaticos = {
     'Ciudad1': [20, 21, 19, 22, 20, 21, 23],
@@ -68,6 +81,11 @@ La ciudad con la temperatura promedio más alta es Ciudad3.
 La ciudad con la temperatura promedio más baja es Ciudad5.
 
 
+
+
+
+
+
 Ejercicio 2: 
 
 def suma_valores(cadena):
@@ -85,6 +103,82 @@ print("La suma de los valores de las letras en la cadena es:", suma_valores(cade
 Ejemplo de resultado:
 Ingrese una cadena de letras minúsculas: hola
 La suma de los valores de las letras en la cadena es: 36
+
+
+
+
+
+Ejercicio 3: Tengo conocimientos basicos en pandas, que es una 
+ biblioteca de Python para el análisis de datos. Aunque 
+no soy un experto, puedo manejar tareas mas básicas.
+
+
+import pandas as pd
+from datetime import datetime
+
+# Lee el archivo CSV
+df = pd.read_csv('../../Prueba_Promociones.csv')
+
+def get_user_input():
+    # Pedir fecha de inicio
+    fecha_inicio = input("Ingrese la fecha de inicio (YYYY-MM-DD) o Enter para dejar vacio: ")
+    if fecha_inicio:
+        try:
+            fecha_inicio = datetime.strptime(fecha_inicio, '%Y-%m-%d')
+        except ValueError:
+            print("Fecha de inicio no válida. Usando None.")
+            fecha_inicio = None
+    else:
+        fecha_inicio = None
+
+    # fecha de fin
+    fecha_fin = input("Ingrese la fecha de fin (YYYY-MM-DD) o Enter para dejar vacio: ")
+    if fecha_fin:
+        try:
+            fecha_fin = datetime.strptime(fecha_fin, '%Y-%m-%d')
+        except ValueError:
+            print("Fecha de fin no válida. Usando None.")
+            fecha_fin = None
+    else:
+        fecha_fin = None
+
+    # categoría
+    categoria = input("Ingrese la categoría o Enter para dejar vacio: ")
+    if not categoria:
+        categoria = None
+
+    # uso
+    uso = input("Ingrese el uso o Enter para dejar vacio: ")
+    if not uso:
+        uso = None
+
+    # SKU
+    while True:
+        sku = input("Ingrese el SKU: ")
+        if sku:
+            break
+        else:
+            print("El SKU no puede estar vacío. Trate de nuevo.")
+
+    # porcentaje
+    while True:
+        try:
+            porcentaje = float(input("Ingrese el porcentaje de crecimiento (decimal): "))
+            break
+        except ValueError:
+            print("Porcentaje no válido. Trate de nuevo.")
+
+    # inventario inicial
+    while True:
+        try:
+            inventario_inicial = int(input("Ingrese el inventario inicial (entero): "))
+            break
+        except ValueError:
+            print("Inventario inicial no válido. Trate de nuevo.")
+
+    return fecha_inicio, fecha_fin, categoria, uso, sku, porcentaje, inventario_inicial
+
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Examen técnico 
