@@ -29,21 +29,46 @@ JOIN
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Desarrollo de visualizaciones en Business Intelligence
 
-Honestamente, no tengo experiencia previa en el uso de BI, pero me meti a investigar en Power BI 
-y me llamó mucho la atención ver los datos desplegados y analizados. Sin duda, me gustaría 
-aprender más sobre este tema. La forma en que Power BI permite visualizar y manipular datos 
-es muy interesante y estoy emocionado por la oportunidad de mejorar mis habilidades en esta área. 
-Estoy dispuesto a dedicar tiempo y esfuerzo para dominar esta herramienta y poder contribuir de
-manera efectiva en el análisis y visualización de datos en mi futuro rol.
+1. ¿Qué materiales me voy a quedar sin inventario y en qué fecha me quedo sin inventario? 
+
+Visualización: "Materiales sin inventario"
+Observaciones: La línea que desciende por debajo de 0 en el gráfico indica el material que se quedará sin inventario.
+
+2. ¿Cuáles productos son los más importantes en venta?
+
+Visualización: "Productos más importantes"
+Observaciones: Los productos con la mayor cantidad de ventas se puede ver que los materiales como 
+"Material - 063082" y "Material - 464255" son los más vendidos.
+
+3. ¿Cuáles productos tengo riesgo de quedarme con mucho inventario al final del año?
+
+Visualización: "Riesgo inventario"
+Observaciones: Los productos que tienen mas rieso a qedarse sin inernario son los materiales "Material - 063082" y "Material - 464255".
+
+4. ¿Hay mucha variación entre la venta de años pasados y el forecast?
+Si hay mucha variación entre los años pasados entre los años 2018 y 2019 no hubo mucho cambio, 
+pero al vizualizar los proximos años si se ve un desequilibrio mayor.
+
+6. Después de haber presentado esta primera versión del dashboard, 
+¿qué pasos recomendarías seguir para liberarlo para el uso en el día a día por parte del cliente?
+
+Los pasos que yo recomendaria serian los siguientes: 
+Revisión: Validar los datos y las visualizaciones con el cliente para asegurar que toda la información es precisa y útil.
+Capacitación: Capacitar a los usuarios  en cómo utilizar e interpretar el dashboard.
+Automatización: Configurar actualizaciones automáticas de datos para mantener el dashboard actualizado.
+Feedback: Recopilar retroalimentación de los usuarios para realizar ajustes y mejoras continuas.
+
+7. ¿Cómo esperarías que fuera la interacción entre IBSO y el cliente por los siguientes 12 meses? 
+
+Yo esperaria que la interacion fuera:
+Comunicación regular:Establecer reuniones para revisar el rendimiento del inventario y las ventas.
+Soporte continuo: Ofrecer soporte técnico y analítico para resolver cualquier problema necesario.
+Monitoreo: Monitorear el uso del dashboard y la efectividad de las decisiones basadas en los datos .
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Ejercicios – Python
 
 Ejercicio 1: 
-
-
-
-
 
 datos_climaticos = {
     'Ciudad1': [20, 21, 19, 22, 20, 21, 23],
@@ -74,7 +99,7 @@ Ejemplo de resultado:
 Temperaturas promedio por ciudad:
 Ciudad1: 21.43°C
 Ciudad2: 16.00°C
-Ciudad3: 29.71°C
+Ciudad3: 29.71°C 
 Ciudad4: 25.00°C
 Ciudad5: 11.43°C
 La ciudad con la temperatura promedio más alta es Ciudad3.
